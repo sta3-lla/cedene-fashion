@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cedene Fashion – Couture Femme & Enfant</title>
+
+<style>
+:root{
+  --primary:#7a2e2e;
+  --secondary:#1f3c3d;
+  --accent:#c9a24d;
+  --dark:#2b2b2b;
+  --light:#f4f6f5;
+}
+
+body{
+  margin:0;
+  font-family:Segoe UI,Arial,sans-serif;
+  background:var(--light);
+  color:var(--dark);
+}
+
+header{
+  background:#fff;
+  text-align:center;
+  padding:30px 15px;
+  box-shadow:0 4px 15px rgba(0,0,0,.1);
+}
+
+header img{max-width:180px;margin-bottom:10px}
+
+nav a{
+  margin:0 12px;
+  text-decoration:none;
+  color:var(--secondary);
+  font-weight:600;
+}
+
+section{
+  max-width:1200px;
+  margin:auto;
+  padding:50px 20px;
+}
+
+h2{text-align:center;color:var(--primary)}
+h3{text-align:center;color:var(--accent);margin-top:30px}
+
+.video-box{text-align:center;margin:30px 0}
+video{
+  width:90%;
+  max-width:720px;
+  border-radius:18px;
+  box-shadow:0 10px 25px rgba(0,0,0,.25);
+}
+
+.after-video{
+  margin-top:15px;
+  padding:14px 26px;
+  background:var(--primary);
+  color:#fff;
+  border:none;
+  border-radius:30px;
+  cursor:pointer;
+  font-weight:600;
+}
+
+.carousel{
+  display:flex;
+  gap:22px;
+  overflow-x:auto;
+  padding:25px 0;
+}
+
+.product{
+  background:#fff;
+  min-width:230px;
+  padding:15px;
+  border-radius:18px;
+  box-shadow:0 8px 20px rgba(0,0,0,.15);
+  text-align:center;
+}
+
+.product img{width:100%;border-radius:15px}
+
+.product button{
+  margin-top:12px;
+  padding:12px 18px;
+  background:var(--secondary);
+  color:#fff;
+  border:none;
+  border-radius:25px;
+  cursor:pointer;
+}
+
+.cart-icon{
+  position:fixed;
+  top:20px;
+  right:20px;
+  background:var(--primary);
+  color:#fff;
+  padding:12px 18px;
+  border-radius:30px;
+  cursor:pointer;
+}
+
+.cart{
+  position:fixed;
+  top:80px;
+  right:20px;
+  width:340px;
+  background:#fff;
+  padding:20px;
+  border-radius:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,.4);
+  display:none;
+}
+
+.cart input,.cart textarea{
+  width:100%;
+  padding:10px;
+  margin-bottom:10px;
+  border-radius:10px;
+  border:1px solid #ccc;
+}
+
+.cart button{
+  width:100%;
+  padding:14px;
+  background:var(--primary);
+  color:#fff;
+  border:none;
+  border-radius:25px;
+  font-weight:600;
+}
+
+footer{
+  background:var(--dark);
+  color:#fff;
+  text-align:center;
+  padding:20px;
+}
+.video-box video{
+  width:100%;
+  max-width:500px;   /* réduit la largeur */
+  height:260px;      /* réduit la hauteur */
+  object-fit:cover;  /* reste dans le cadre */
+  border-radius:18px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <img src="image/logo.webp" alt="Cedene Fashion">
+  <nav>
+    <a href="#femme">Femme</a>
+    <a href="#enfant">Enfant</a>
+  </nav>
+</header>
+
+<div class="cart-icon" onclick="toggleCart()">🛒 <span id="cart-count">0</span></div>
+
+<div class="cart" id="cart">
+  <h3>Ma commande</h3>
+  <ul id="cart-items"></ul>
+
+  <input id="name" placeholder="Nom et prénom">
+  <input id="phone" placeholder="Téléphone WhatsApp">
+  <input id="size" placeholder="Taille / âge">
+  <textarea id="details" placeholder="Détails sur mesure (tissu, couleur, modèle)"></textarea>
+  <input id="measurements" placeholder="Mensurations">
+
+  <button onclick="checkout()">Envoyer la commande</button>
+</div>
+
+<!-- FEMME -->
+<section id="femme">
+<h2>Couloir Femme</h2>
+
+<div class="video-box" >
+<video autoplay muted loop  
+>
+  <source src="vidéo/VIB.mp4">
+</video><br>
+<button class="after-video" onclick="toggleCart()">Commander après la vidéo</button>
+</div>
+
+<h3>Tenues </h3>
+<div class="carousel">
+  <div class="product">
+
+  <div style="
+    display:flex;
+    gap: 2px;
+    
+  ">
+
+    <img 
+      src="image/1.jpg"
+      style="
+        width:100%;
+        min-width:100%;
+        height:280px;
+        object-fit:contain;
+        background:#f4f6f5;
+        
+      "
+    >
+
+    <img 
+      src="image/2.jpg"
+      style="
+        width:100%;
+        min-width:100%;
+        height:280px;
+        object-fit:contain;
+        background:#f4f6f5;
+      
+      "
+    >
+
+    <img 
+      src="image/3.jpg"
+      style="
+        width:100%;
+        min-width:100%;
+        height:280px;
+        object-fit:contain;
+        background:#f4f6f5;
+        border-radius:15px;
+      "
+    > 
+<img 
+      src="image/4.jpg"
+      style="
+        width:100%;
+        min-width:100%;
+        height:280px;
+        object-fit:contain;
+        background:#f4f6f5;
+        border-radius:15px;
+      "
+    >
+    <img 
+      src="image/5.jpg"
+      style="
+        width:100%;
+        min-width:100%;
+        height:280px;
+        object-fit:contain;
+        background:#f4f6f5;
+        border-radius:15px;
+      "
+    >
+    <img 
+      src="image/6.jpg"
+      style="
+        width:100%;
+        min-width:100%;
+        height:280px;
+        object-fit:contain;
+        background:#f4f6f5;
+        border-radius:15px;
+      "
+    ><img 
+      src="image/7.jpg"
+      style="
+        width:100%;
+        min-width:100%;
+        height:280px;
+        object-fit:contain;
+        background:#f4f6f5;
+        border-radius:15px;
+      "
+    >
+    <img 
+      src="image/8.jpg"
+      style="
+        width:100%;
+        min-width:100%;
+        height:280px;
+        object-fit:contain;
+        background:#f4f6f5;
+        border-radius:15px;
+      "
+    ><img 
+      src="image/9.jpg"
+      style="
+        width:100%;
+        min-width:100%;
+        height:280px;
+        object-fit:contain;
+        background:#f4f6f5;
+        border-radius:15px;
+      "
+    ><img 
+      src="image/10.jpg"
+      style="
+        width:100%;
+        min-width:100%;
+        height:280px;
+        object-fit:contain;
+        background:#f4f6f5;
+        border-radius:15px;
+      "
+    >
+  </div>
+
+  <button>Ajouter</button>
+
+</div>
+
+  >
+
+</div>
+
+    <p>Tenues </p>
+    <button onclick="addToCart('Tenues ')">Ajouter</button>
+  </div>
+</div>
+</section>
+
+<!-- ENFANT -->
+<section id="enfant">
+<h2>Couloir Enfant</h2>
+
+<div class="video-box">
+<video autoplay muted loop 
+>
+
+  <source src="vidéo/fant.mp4">
+</video><br>
+<button class="after-video" onclick="toggleCart()">Commander après la vidéo</button>
+</div>
+
+<h3>Tenues </h3>
+<div class="carousel">
+  <div class="product">
+     <div style="
+    display:flex;
+    gap: 2px;
+    
+  ">
+    <img src="fant/1.jpg" style="
+        width:100%;
+        min-width:100%;
+        height:280px;
+        object-fit:contain;
+        background:#f4f6f5;
+        border-radius:15px;
+      ">
+      <img src="fant/2.jpg" style="
+        width:100%;
+        min-width:100%;
+        height:280px;
+        object-fit:contain;
+        background:#f4f6f5;
+        border-radius:15px;
+      ">
+      <img src="fant/3.jpg" style="
+        width:100%;
+        min-width:100%;
+        height:280px;
+        object-fit:contain;
+        background:#f4f6f5;
+        border-radius:15px;
+      ">
+      <img src="fant/4.jpg" style="
+        width:100%;
+        min-width:100%;
+        height:280px;
+        object-fit:contain;
+        background:#f4f6f5;
+        border-radius:15px;
+      ">
+      <img src="fant/5.jpg" style="
+        width:100%;
+        min-width:100%;
+        height:280px;
+        object-fit:contain;
+        background:#f4f6f5;
+        border-radius:15px;
+      ">
+      <img src="fant/6.jpg" style="
+        width:100%;
+        min-width:100%;
+        height:280px;
+        object-fit:contain;
+        background:#f4f6f5;
+        border-radius:15px;
+      ">
+      <img src="fant/7.jpg" style="
+        width:100%;
+        min-width:100%;
+        height:280px;
+        object-fit:contain;
+        background:#f4f6f5;
+        border-radius:15px;
+      ">
+      <img src="fant/8.jpg" style="
+        width:100%;
+        min-width:100%;
+        height:280px;
+        object-fit:contain;
+        background:#f4f6f5;
+        border-radius:15px;
+      ">
+      <img src="fant/9.jpg" style="
+        width:100%;
+        min-width:100%;
+        height:280px;
+        object-fit:contain;
+        background:#f4f6f5;
+        border-radius:15px;
+      ">
+      <img src="fant/10.jpg" style="
+        width:100%;
+        min-width:100%;
+        height:280px;
+        object-fit:contain;
+        background:#f4f6f5;
+        border-radius:15px;
+      ">
+      <img src="fant/11.jpg" style="
+        width:100%;
+        min-width:100%;
+        height:280px;
+        object-fit:contain;
+        background:#f4f6f5;
+        border-radius:15px;
+      ">
+      <img src="fant/12.jpg" style="
+        width:100%;
+        min-width:100%;
+        height:280px;
+        object-fit:contain;
+        background:#f4f6f5;
+        border-radius:15px;
+      ">
+    <p>Tenue moderne enfant</p>
+    <button onclick="addToCart('Tenue enfant')">Ajouter</button>
+  </div>
+</div>
+
+
+</section>
+
+<footer>
+<p>© 2025 Cedene Fashion – Couture Femme & Enfant</p>
+<p>⚠️ Déplacement payant – Livraison possible</p>
+</footer>
+
+<script>
+let cart=[];
+
+function addToCart(name){
+  cart.push(name);
+  document.getElementById("cart-count").innerText=cart.length;
+  document.getElementById("cart-items").innerHTML =
+    cart.map(i=>"<li>"+i+"</li>").join("");
+}
+
+function toggleCart(){
+  let c=document.getElementById("cart");
+  c.style.display=c.style.display==="block"?"none":"block";
+}
+
+function checkout(){
+  let msg="Bonjour Cedene Fashion,%0AJe souhaite commander:%0A";
+  cart.forEach(i=>msg+="- "+i+"%0A");
+  window.open("https://wa.me/2290148044162?text="+msg);
+}
+</script>
+
+</body>
+</html>
